@@ -34,7 +34,7 @@ function Install-TervisChocolateyPackageParallel {
             try {
                 $Parameters = $PSBoundParameters | ConvertFrom-PSBoundParameters
                 Install-TervisChocolatey -ComputerName $ComputerName
-                Install-TervisChocolateyPackage -ComputerName $ComputerName -PackageName $Parameters.PackageName -Version $Parameters
+                Install-TervisChocolateyPackage -ComputerName $ComputerName -PackageName $Parameters.PackageName -Version $Parameters.Version
             } catch {throw "Not installed on $ComputerName"}
         } -MaxConcurrentJobs 25 -Verbose
     }
